@@ -83,7 +83,7 @@ function buscarMejorPromedio() {
     }
     mejorPromedio = sumaDePromedios.reduce((a, b) => Math.max(a, b), 0)
     posicion = sumaDePromedios.indexOf(mejorPromedio)
-    nombre = buscarEstudianteDelmejorPromedio(posicion + 1)
+    nombre = buscarEstudianteDelmejorPromedio(posicion)
     console.log(nombre + " Tiene el mejor promedio de la clase, con " + mejorPromedio + " de nota")
 
 }
@@ -102,6 +102,7 @@ bienvenida()
 
 
 function mostrarOpciones(opcion) {
+
     switch (opcion) {
         case 1:
             console.log(listaAlumnos)
@@ -137,7 +138,7 @@ function mostrarOpciones(opcion) {
 
             break;
         case 3:
-
+            console.log(listaAlumnos)
             buscarMejorPromedio()
 
             break;
