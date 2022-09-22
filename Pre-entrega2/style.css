@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 920px;
+    margin: auto auto;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    list-style: none;
+
+}
+
+
+.index-listado-equipo .item-list img {
+    width: 100px;
+}
+
+.index-listado-equipo img:hover {
+    -webkit-animation: vaiven 1s;
+    animation: vaiven 1s;
+
+}
+
+@keyframes vaiven {
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: rotate(-3deg);
+    }
+}
