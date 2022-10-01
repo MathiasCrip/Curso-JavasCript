@@ -16,6 +16,8 @@ let cuerpo = document.querySelector("body")
 const check = document.querySelector("input")
 
 
+
+
 for (let iterator of equipos) {
 
     etiqueta.innerHTML += `<li class="item-list"><a href="#"><img id="idImg" class="p-1 img-team" src="./imagenes/${iterator}" alt="" data-equipo="${iterator}">
@@ -42,7 +44,6 @@ function darkMode() {
 }
 let modoDark = localStorage.getItem("modo")
 let cargaDeEquipos = localStorage.getItem("cargaEquipos")
-
 
 if (modoDark == "true") {
     document.body.classList.add("dark-mod")
@@ -82,7 +83,6 @@ function achicar() {
 }
 
 let i = 0
-let aside = document.getElementById("aside")
 for (i; i < equipos.length; i++) {
 
     imagenes[i].onmouseover = function (event) {
@@ -113,6 +113,7 @@ Array.from(imagenes).forEach((elemento) => {
         let equipo = elemento.getAttribute("data-equipo");
         const etiqueta = document.createElement("li")
 
+
         localStorage.setItem("cargarUltimoE", equipo)
         let listadoTeam = localStorage.getItem("cargarUltimoE")
 
@@ -120,6 +121,13 @@ Array.from(imagenes).forEach((elemento) => {
         width: 50px;"/>`
 
         document.getElementById("listado-team").append(etiqueta)
+        Toastify({
+            text: "Guardando equipo ->",
+            className: "info",
+            style: {
+                background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+        }).showToast();
     })
 
     elemento.addEventListener('mouseover', (e) => { // AL PASAR EL MOUSE SOBRE ALGUNOS DE LOS EQUIPOS, MUESTRA LA IMG AGRANDADA
@@ -134,3 +142,5 @@ Array.from(imagenes).forEach((elemento) => {
         img.innerHTML = `<img src=" ">`
     })
 });
+
+
